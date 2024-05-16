@@ -1,10 +1,8 @@
 from chatterbot import ChatBot
 from chatterbot.trainers import ListTrainer
 
-# Passo 2: Treinamento do Chatbot
 chatbot = ChatBot('Assistente de Estudos')
 
-# Treinamento do Chatbot com dados sobre Matemática
 mat_training = [
     "Qual é a fórmula para calcular a área de um círculo?",
     "A fórmula para calcular a área de um círculo é π * raio².",
@@ -14,7 +12,6 @@ mat_training = [
     "Um número primo é um número natural maior que 1 que possui apenas dois divisores: 1 e ele mesmo."
 ]
 
-# Treinamento do Chatbot com dados sobre Ciências
 cie_training = [
     "Qual é a lei da gravidade?",
     "A lei da gravidade foi formulada por Isaac Newton e descreve a atração entre corpos massivos.",
@@ -24,7 +21,6 @@ cie_training = [
     "Um átomo é a menor unidade de um elemento químico que mantém as propriedades desse elemento."
 ]
 
-# Treinamento do Chatbot com dados sobre História
 his_training = [
     "Quem foi o primeiro presidente dos Estados Unidos?",
     "O primeiro presidente dos Estados Unidos foi George Washington.",
@@ -34,13 +30,11 @@ his_training = [
     "Cleópatra foi a última rainha do Egito da dinastia Ptolemaica, conhecida por sua inteligência e beleza."
 ]
 
-# Treinamento do Chatbot com os dados de todas as disciplinas
 trainer = ListTrainer(chatbot)
 trainer.train(mat_training)
 trainer.train(cie_training)
 trainer.train(his_training)
 
-# Função para permitir que o usuário escolha a disciplina
 def escolher_disciplina():
     print("Olá! Em qual disciplina você precisa de ajuda?")
     print("1 - Matemática")
